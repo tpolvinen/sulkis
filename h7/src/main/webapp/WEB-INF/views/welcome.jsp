@@ -21,6 +21,7 @@
 		</ul>
 		
 		<p>
+			<a href="lista">lista</a><br/>
 			<a href="loginpage">loginpage</a><br/>
 			<a href="secure/main">secure/main</a><br/>
 			<a href="secure/admin/tools">secure/admin/tools</a>
