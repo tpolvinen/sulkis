@@ -1,9 +1,12 @@
 package fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.controller;
 
+//import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -24,7 +27,7 @@ public class MiscController {
 		this.miscService = miscService;
 	}
 	
-
+	
 	@RequestMapping(value = "/admineille", method = RequestMethod.GET)
 	public String vainAdmineille(Model model) {
 		miscService.palveluAdmineille();
@@ -39,6 +42,7 @@ public class MiscController {
 		return "misc";
 	}
 	
+
 	@RequestMapping(value = "/kaikille", method = RequestMethod.GET)
 	public String kaikille(Model model) {
 		miscService.palveluKaikille();

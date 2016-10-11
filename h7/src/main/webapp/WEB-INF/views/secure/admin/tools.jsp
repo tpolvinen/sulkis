@@ -15,5 +15,26 @@
 
 <p><a href="../main">P‰‰sivu</a></p>
 <p><a href="../../j_spring_security_logout" > Kirjaudu ulos</a></p>
+
+
+<h1>
+		Luo Pelaaja
+	</h1>
+		<fieldset>
+			<form:form modelAttribute="uusipelaaja" method="post">
+				
+				<p>
+					<form:label	path="nimi">Nimi</form:label><br/>
+					<form:input path="nimi" cssErrorClass="VirheellinenKentta"/> <form:errors path="nimi" cssClass="Virheteksti"/>
+				</p>
+				
+				<p>	
+					<button type="submit">Lis‰‰</button>
+				</p>
+			</form:form>
+			
+		</fieldset>
+
+
 </body>
 </html>

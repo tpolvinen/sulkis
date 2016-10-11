@@ -17,11 +17,36 @@
 
 
 <sec:authorize access="hasRole('ROLE_ADMIN')">
-<p><a href="admin/tools">Admin tools</a></p>
+
+<!-- 	<p><a href="admin/tools">Admin tools</a></p> -->
+
+	<form:form action="secure/admin/tools" method="get"> // vai: "../secure/admin/tools"
+	<p><button type="submit">Uusi</button></p>
+	</form:form>
+	
 </sec:authorize>
 
 
- 
+	<h1>Lista!</h1>
+	<fieldset>
+		<table>
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>nimi</th>
+					<th>voittolkm</th>
+				</tr>
+				<c:forEach var="data" items="${voittolista}">
+					<tr>
+						<td>${data.id}</td>
+						<td>${data.nimi}</td>
+						<td>${data.voittolkm}</td>
+					</tr>
+				</c:forEach>
+		</table>
+	</fieldset>
+
+
 <p><a href="../j_spring_security_logout" > Kirjaudu ulos</a></p>
 
 </body>

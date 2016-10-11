@@ -13,3 +13,9 @@ public interface Pelaaja {
 	public abstract void setVoittolkm(Integer voittolkm);
 
 }
+
+//CREATE TABLE pelaajat (
+//		id integer NOT NULL auto_increment PRIMARY KEY,
+//		nimi varchar(255) NOT NULL UNIQUE,
+//		voittolkm integer NOT NULL
+//	) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
 
 import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.bean.Pelaaja;
 
+@Repository
 public class PelaajatDAO {
 	
 	@Inject
@@ -66,9 +67,9 @@ public class PelaajatDAO {
 	/**
 	 * Haetaan lista kaikista pelaajista
 	 */
-	public List<Pelaaja> haeKaikki() {
+	public List<Pelaaja> haeKaikkiPelaajat() {
 
-		String sql = "SELECT id, nimi, voittolkm FROM pelaajat";
+		String sql = "SELECT id, nimi, voittolkm FROM pelaajat ORDER BY voittolkm";
 		RowMapper<Pelaaja> mapper = new PelaajatRowMapper();
 		
 		List<Pelaaja> pelaajalista = jdbcTemplate.query(sql, mapper);
