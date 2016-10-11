@@ -20,22 +20,22 @@ import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.dao.PelaajatDAO;
 @RequestMapping (value="/pelaajat")
 public class PelaajaController {
 	
-//	@Inject
-//	private PelaajatDAO dao;
-//	
-//	public PelaajatDAO getDao() {
-//		return dao;
-//	}
-//
-//	public void setDao(PelaajatDAO dao) {
-//		this.dao = dao;
-//	}
+	@Inject
+	private PelaajatDAO pDao;
+	
+	public PelaajatDAO getDao() {
+		return pDao;
+	}
+
+	public void setDao(PelaajatDAO dao) {
+		this.pDao = dao;
+	}
 	
 	//KAIKKIEN TIETOJEN NÄYTTÄMINEN
 	@RequestMapping(value="/lista", method=RequestMethod.GET)
 	public String naytaKaikki(@ModelAttribute(value="uusipelaaja") PelaajaImpl pelaaja, Model model) {
-//		List <Pelaaja> voittolista = dao.haeKaikki();
-//		model.addAttribute("voittolista", voittolista);
+		List <Pelaaja> voittolista = pDao.haeKaikkiPelaajat();
+		model.addAttribute("voittolista", voittolista);
 		return "???";
 	}
 	
@@ -53,7 +53,7 @@ public class PelaajaController {
 		if (result.hasErrors()) {
 			return "secure/pelaaja";
 		} else {
-//			dao.talleta(pelaaja);
+//			pDao.talleta(pelaaja);
 			return "redirect:/pelaajat/lista";
 		}
 	}

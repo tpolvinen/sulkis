@@ -1,5 +1,6 @@
 package fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.controller;
 
+import javax.inject.Inject;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -11,10 +12,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.bean.Pelaaja;
 import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.bean.PelaajaImpl;
+import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.dao.PelaajatDAO;
 
 @Controller
 @RequestMapping(value="/secure/admin")
 public class AdminController {
+
+	@Inject
+	private PelaajatDAO pDao;
+	
+	public PelaajatDAO getDao() {
+		return pDao;
+	}
+
+	public void setDao(PelaajatDAO pDao) {
+		this.pDao = pDao;
+	}
 	
 	//PELAAJAFORMIN TEKEMINEN tools.jsp -sivulle
 	@RequestMapping(value = "/tools", method = RequestMethod.GET)
@@ -26,13 +39,13 @@ public class AdminController {
 		return "secure/admin/tools";
 	}
 	
-	//PELAAJAFORMIN TIETOJEN VASTAANOTTO
+	//PELAAJAFORMIN TIETOJEN VASTAANOTTO tools.jsp -sivulta
 	@RequestMapping(value="uusipelaaja", method=RequestMethod.POST)
 	public String createPelaaja(@ModelAttribute(value="pelaaja") @Valid PelaajaImpl pelaaja, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			return "secure/admin/tools";
 		} else {
-//			dao.talleta(pelaaja);
+			pDao.talleta(pelaaja);
 			return "secure/main";
 		}
 	}

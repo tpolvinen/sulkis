@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.bean.Pelaaja;
 import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.bean.PelaajaImpl;
 import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.bean.Ottelu;
-import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.bean.OtteluImpl;
+//import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.bean.OtteluImpl;
 import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.dao.PelaajatDAO;
 import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.dao.OttelutDAO;
 
