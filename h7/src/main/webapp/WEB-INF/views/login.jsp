@@ -24,8 +24,8 @@
 	<form action="j_spring_security_check" method="post">
 	<fieldset>
 		<table>
-		<tr><td>USERNAME:</td><td><input type='text' name='j_username' value=''></td></tr>
-		<tr><td>PASSWORD:</td><td><input type='password' name='j_password' /></td></tr>
+		<tr><td>USERNAME:</td><td><input type='text' name='j_username' value='tatupolvinen'></td></tr>
+		<tr><td>PASSWORD:</td><td><input type='password' name='j_password' value='tatupolvinen'/></td></tr>
 		<tr><td>&nbsp;</td><td><button type="submit">Kirjaudu</button></td></tr>
 		</table>
 	</fieldset>

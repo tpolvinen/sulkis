@@ -101,8 +101,7 @@ public class OttelutDAO {
 				+ "pelaaja1,  pelaaja2, pvm, "
 				+ "p1era1, p2era1, "
 				+ "p1era2, p2era2, "
-				+ "p1era3, p2era3, "
-				+ "voittaja) FROM ottelut";
+				+ "p1era3, p2era3, voittaja FROM ottelut";
 		RowMapper<Ottelu> mapper = new OttelutRowMapper();
 		List<Ottelu> ottelutlista = jdbcTemplate.query(sql, mapper);
 

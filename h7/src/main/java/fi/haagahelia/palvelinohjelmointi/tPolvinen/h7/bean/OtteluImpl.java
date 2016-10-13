@@ -2,10 +2,14 @@ package fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.bean;
 
 //standardeja jsr303-annotaatioita
 import java.sql.Date;
+
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
 import com.sun.istack.internal.NotNull;
+
 
 //itse tehty validaattoriannotaatio
 import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.bean.validation.AlkaaIsollaKirjaimella;
@@ -15,38 +19,44 @@ public class OtteluImpl implements Ottelu {
 
 	private int id;
 	
-//	@Size(min = 1, max = 255)  // ei tarvitse, koska arvo valitaan pelaajat-taulun perusteella
-//	@AlkaaIsollaKirjaimella
+	@Size(min = 1, max = 255)  // ei tarvitse, koska arvo valitaan pelaajat-taulun perusteella
+	@AlkaaIsollaKirjaimella
 	private String pelaaja1;
 	
-//	@Size(min = 1, max = 255)  // ei tarvitse, koska arvo valitaan pelaajat-taulun perusteella
-//	@AlkaaIsollaKirjaimella
+	@Size(min = 1, max = 255)  // ei tarvitse, koska arvo valitaan pelaajat-taulun perusteella
+	@AlkaaIsollaKirjaimella
 	private String pelaaja2;
 	
 	private Date pvm;  //tähän en nyt osaa saman tien tehdä validointia, myöhemmin ehkä! 
 	
 	@NotNull
     @Min(0)
+	@Max(30)
 	private int p1era1;
 	
 	@NotNull
     @Min(0)
+	@Max(30)
 	private int p2era1;
 	
 	@NotNull
     @Min(0)
+	@Max(30)
 	private int p1era2;
 	
 	@NotNull
     @Min(0)
+	@Max(30)
 	private int p2era2;
 	
 	@NotNull
     @Min(0)
+	@Max(30)
 	private int p1era3;
 	
 	@NotNull
     @Min(0)
+	@Max(30)
 	private int p2era3;
 	
 //	@Size(min = 1, max = 255)  // ei tarvitse, koska arvo tulee pelaajat-taulun perusteella
