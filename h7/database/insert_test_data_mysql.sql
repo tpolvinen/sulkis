@@ -25,15 +25,15 @@ VALUES
 INSERT INTO
 	pelaajat
 VALUES
-	(1, Niels, 2)
-	(2, Arto, 0)
-	(3, Tatu, 0)
-	(4, Eero, 1);
+	(1, 'Niels', 2),
+	(2, 'Arto', 0),
+	(3, 'Tatu', 0),
+	(4, 'Eero', 1);
 	
 	
 INSERT INTO
 	ottelut
 VALUES
-	(1, Niels, Arto, 2016-10-08, 21, 19, 18, 21, 22, 20)
-	(2, Tatu, Eero, 2016-10-08, 21, 19, 23, 25, 29, 30)
-	(3, Niels, Eero, 2016-10-08, 21, 18, 21, 15, 21, 10);
+	(1, 'Niels', 'Arto', 2016-10-08, 21, 19, 18, 21, 22, 20, 'Niels'),
+	(2, 'Tatu', 'Eero', 2016-10-08, 21, 19, 23, 25, 29, 30, 'Eero'),
+	(3, 'Niels', 'Eero', 2016-10-08, 21, 18, 21, 15, 21, 10, 'Niels');

@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +14,11 @@
 	href="resources/styles/common.css">
 </head>
 <body>
+
+
+<c:redirect url="pelaajat/lista"/>
+
+
 	<img src="resources/images/hh_logo.jpg" alt="HAAGA-HELIA" />
 	<h1>Java EE</h1>
 	<h2>DEMO 16</h2>
@@ -21,7 +31,6 @@
 		</ul>
 		
 		<p>
-			<a href="lista">lista</a><br/>
 			<a href="loginpage">loginpage</a><br/>
 			<a href="secure/main">secure/main</a><br/>
 			<a href="secure/admin/tools">secure/admin/tools</a>

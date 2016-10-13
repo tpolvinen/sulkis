@@ -27,7 +27,6 @@
 </sec:authorize>
 
 
-	<h1>Lista!</h1>
 	<fieldset>
 		<table>
 			<thead>
@@ -36,16 +35,16 @@
 					<th>nimi</th>
 					<th>voittolkm</th>
 				</tr>
-				<c:forEach var="data" items="${voittolista}">
+				<c:forEach var="data" items="${pelaajalista}">
 					<tr>
 						<td>${data.id}</td>
 						<td>${data.nimi}</td>
 						<td>${data.voittolkm}</td>
+				
 					</tr>
 				</c:forEach>
 		</table>
 	</fieldset>
-
 
 <p><a href="../j_spring_security_logout" > Kirjaudu ulos</a></p>
 

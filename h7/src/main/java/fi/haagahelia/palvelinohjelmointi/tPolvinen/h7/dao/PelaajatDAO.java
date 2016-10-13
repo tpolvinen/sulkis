@@ -69,7 +69,7 @@ public class PelaajatDAO {
 	 */
 	public List<Pelaaja> haeKaikkiPelaajat() {
 
-		String sql = "SELECT id, nimi, voittolkm FROM pelaajat ORDER BY voittolkm";
+		String sql = "SELECT id, nimi, voittolkm FROM pelaajat ORDER BY voittolkm DESC";
 		RowMapper<Pelaaja> mapper = new PelaajatRowMapper();
 		
 		List<Pelaaja> pelaajalista = jdbcTemplate.query(sql, mapper);

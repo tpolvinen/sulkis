@@ -27,16 +27,16 @@ public class PelaajaController {
 		return pDao;
 	}
 
-	public void setDao(PelaajatDAO dao) {
-		this.pDao = dao;
+	public void setDao(PelaajatDAO pDao) {
+		this.pDao = pDao;
 	}
 	
 	//KAIKKIEN TIETOJEN NÄYTTÄMINEN
 	@RequestMapping(value="/lista", method=RequestMethod.GET)
-	public String naytaKaikki(@ModelAttribute(value="uusipelaaja") PelaajaImpl pelaaja, Model model) {
-		List <Pelaaja> voittolista = pDao.haeKaikkiPelaajat();
-		model.addAttribute("voittolista", voittolista);
-		return "???";
+	public String naytaKaikki(PelaajaImpl pelaaja, Model model) { //@ModelAttribute(value="uusipelaaja")
+		List <Pelaaja> pelaajalista = pDao.haeKaikkiPelaajat();
+		model.addAttribute("pelaajalista", pelaajalista);
+		return "voittolista";
 	}
 	
 	//PELAAJAFORMIN TEKEMINEN
@@ -53,7 +53,7 @@ public class PelaajaController {
 		if (result.hasErrors()) {
 			return "secure/pelaaja";
 		} else {
-//			pDao.talleta(pelaaja);
+			pDao.talleta(pelaaja);
 			return "redirect:/pelaajat/lista";
 		}
 	}
