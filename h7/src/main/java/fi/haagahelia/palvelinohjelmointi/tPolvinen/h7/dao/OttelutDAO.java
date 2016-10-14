@@ -143,4 +143,20 @@ public class OttelutDAO {
 		return ottelutlista;
 	}
 	
+	/**
+	 * Poistetaan kaikki ottelut
+	 */
+	public void poistaKaikkiOttelut() {
+
+		final String sql2 = "TRUNCATE ottelut";
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			public PreparedStatement createPreparedStatement(
+					Connection connection) throws SQLException {
+				PreparedStatement ps2 = connection.prepareStatement(sql2);
+				
+				return ps2;
+			}
+		});
+
+	}
 }

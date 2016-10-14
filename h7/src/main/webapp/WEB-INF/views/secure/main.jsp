@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ page session="false" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -11,125 +11,108 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Pääsivu</title>
-<link rel="stylesheet" type="text/css"
-	href="../resources/styles/common.css">
+<title>PÃ¤Ã¤sivu</title>
+<link rel="stylesheet" href="../resources/styles/common.css" type="text/css" />
+<link rel="stylesheet" href="../resources/styles/form.css" type="text/css" />
+<!-- <link rel="stylesheet" type="text/css" -->
+<!-- 	href="../resources/styles/common.css"> -->
 </head>
 <body>
-<h1>SUOJATTU PÄÄSIVU</h1>
+<img src="../resources/images/hh_logo.jpg" alt="HAAGA-HELIA" />
 
-<h3>Sisäänkirjautuneena: <sec:authentication property="principal.username"/></h3>
-
-
-<sec:authorize access="hasRole('ROLE_ADMIN')">
-
-<!-- 	<p><a href="admin/tools">Admin tools</a></p> -->
-
-	<form:form action="secure/admin/tools" method="get"> // vai: "../secure/admin/tools"
-	<p><button type="submit">Uusi</button></p>
-	</form:form>
-	
-</sec:authorize>
+<h1>Sulkiskuppi</h1>
+<h2>H7</h2>
 
 
-	<fieldset>
+	<p>
+	<div id="contentbox">
+		<p><h4>Sulkiskupin tilanne:</h4></p>
 		<table>
 			<thead>
 				<tr>
-					<th>id</th>
-					<th>nimi</th>
-					<th>voittolkm</th>
+<!-- 					<th>id</th> -->
+					<th>Pelaaja</th>
+					<th>Voitot</th>
 				</tr>
 				<c:forEach var="data" items="${pelaajalista}">
 					<tr>
-						<td>${data.id}</td>
+<%-- 						<td>${data.id}</td> --%>
 						<td>${data.nimi}</td>
 						<td>${data.voittolkm}</td>
 				
 					</tr>
 				</c:forEach>
 		</table>
-	</fieldset>
 	
-	<fieldset>
+	</div>
+	</p>
+	<div id="contentbox">
+		<p><h4>Otteluiden tiedot:</h4></p>
+		<p><a href="lisaaottelu"><button class="button">LisÃ¤Ã¤ ottelu</button></a></p>
+		
 		<table>
 			<thead>
 				<tr>
-					<th>id</th>
-					<th>pelaaja1</th>
-					<th>pelaaja2</th>
-					<th>pvm</th>
-					<th>p1era1</th>
-					<th>p2era1</th>
-					<th>p1era2</th>
-					<th>p2era2</th>
-					<th>p1era3</th>
-					<th>p2era3</th>
-					<th>voittaja</th>
+					<th>Nro.</th>
+					<th>Voittaja</th>
+					<th>PÃ¤ivÃ¤ys</th>
+					<th>Pelaaja 1</th>
+					<th></th>
+					<th>Pelaaja 2</th>
+					<th></th>
+					<th align="center">1</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th align="center">2</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th align="center">3</th>
+					<th></th>
+					
 				</tr>
 				<c:forEach var="data" items="${ottelulista}">
 					<tr>
 						<td>${data.id}</td>
-						<td>${data.pelaaja1}</td>
-						<td>${data.pelaaja2}</td>
-						<td>${data.pvm}</td>
-						<td>${data.p1era1}</td>
-						<td>${data.p2era1}</td>
-						<td>${data.p1era2}</td>
-						<td>${data.p2era2}</td>
-						<td>${data.p1era3}</td>
-						<td>${data.p2era3}</td>
 						<td>${data.voittaja}</td>
+<%-- 						<td>${data.pvm}</td> --%>
+						<td><fmt:formatDate value="${data.pvm}" pattern="dd.MM.YYYY"/></td>
+						<td align="right">${data.pelaaja1}</td>
+						<td align="center">-</td>
+						<td align="left">${data.pelaaja2}</td>
+						<td align="right">${data.p1era1}</td>
+						<td align="center">-</td>
+						<td align="left">${data.p2era1}</td>
+						<td>. .</td>
+						<td align="right">${data.p1era2}</td>
+						<td align="center">-</td>
+						<td align="left">${data.p2era2}</td>
+						<td>. .</td>
+						<td align="right">${data.p1era3}</td>
+						<td align="center">-</td>
+						<td align="left">${data.p2era3}</td>
+						
 				
 					</tr>
 				</c:forEach>
 		</table>
 		
-		<p><a href="lisaaottelu"><button class="button">Lisää ottelu</button></a></p>
+		<p><a href="lisaaottelu"><button class="button">LisÃ¤Ã¤ ottelu</button></a></p>
 	
-	</fieldset>
-	
-<!-- 	<h1> -->
-<!-- 		Luo Ottelu -->
-<!-- 	</h1> -->
-<!-- 		<fieldset> -->
-<%-- 			<form:form modelAttribute="uusiottelu" method="post"> --%>
-				
-<!-- 				<p> -->
-<%-- 					<form:label	path="pelaaja1">pelaaja1</form:label><br/> --%>
-<%-- 					<form:input path="pelaaja1" cssErrorClass="VirheellinenKentta"/> <form:errors path="pelaaja1" cssClass="Virheteksti"/>	<br/>	 --%>
-				
-<%-- 					<form:label	path="pelaaja2">pelaaja2</form:label><br/> --%>
-<%-- 					<form:input path="pelaaja2" cssErrorClass="VirheellinenKentta"/> <form:errors path="pelaaja1" cssClass="Virheteksti"/>	<br/> --%>
-					
-<%-- 					<form:label	path="p1era1">p1era1</form:label><br/> --%>
-<%-- 					<form:input path="p1era1" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era1" cssClass="Virheteksti"/>	<br/> --%>
-				
-<%-- 					<form:label	path="p2era1">p2era1</form:label><br/> --%>
-<%-- 					<form:input path="p2era1" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era1" cssClass="Virheteksti"/>	<br/> --%>
-					
-<%-- 					<form:label	path="p1era2">p2era3</form:label><br/> --%>
-<%-- 					<form:input path="p1era2" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era2" cssClass="Virheteksti"/>	<br/> --%>
-				
-<%-- 					<form:label	path="p2era2">p2era2</form:label><br/> --%>
-<%-- 					<form:input path="p2era2" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era2" cssClass="Virheteksti"/>	<br/> --%>
-				
-<%-- 					<form:label	path="p1era3">p1era3</form:label><br/> --%>
-<%-- 					<form:input path="p1era3" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era3" cssClass="Virheteksti"/>	<br/> --%>
-				
-<%-- 					<form:label	path="p2era3">p2era3</form:label><br/> --%>
-<%-- 					<form:input path="p2era3" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era3" cssClass="Virheteksti"/>	<br/> --%>
-				
-					
-<!-- 				</p> -->
-<!-- 				<p>	 -->
-<!-- 					<button type="submit">Lisää</button> -->
-<!-- 				</p> -->
-<%-- 			</form:form> --%>
-			
-<!-- 		</fieldset> -->
+	</div>
+	<br>
+	<div id="contentbox">
+		<h4>SisÃ¤Ã¤nkirjautuneena: <sec:authentication property="principal.username"/></h4>
+		<a href="../j_spring_security_logout"><button class="button">Kirjaudu ulos</button></a>
 
-<p><a href="../j_spring_security_logout" > Kirjaudu ulos</a></p>
-
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
+			<br><br>
+			<form:form action="admin/tools" method="get">
+				TÃ¤stÃ¤ pÃ¤Ã¤set lisÃ¤Ã¤mÃ¤Ã¤n pelaajia ja nollaamaan tietokannan:
+				<p><button type="submit">Admin Tools</button></p>
+			</form:form>
+		</sec:authorize>
+</div>
 </body>
 </html>

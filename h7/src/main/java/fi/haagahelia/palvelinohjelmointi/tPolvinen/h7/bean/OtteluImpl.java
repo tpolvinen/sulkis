@@ -8,6 +8,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+
 import com.sun.istack.internal.NotNull;
 
 
@@ -19,12 +20,12 @@ public class OtteluImpl implements Ottelu {
 
 	private int id;
 	
-	@Size(min = 1, max = 255)  // ei tarvitse, koska arvo valitaan pelaajat-taulun perusteella
-	@AlkaaIsollaKirjaimella
+//	@Size(min = 1, max = 255)  // ei tarvitse, koska arvo valitaan pelaajat-taulun perusteella
+//	@AlkaaIsollaKirjaimella
 	private String pelaaja1;
 	
-	@Size(min = 1, max = 255)  // ei tarvitse, koska arvo valitaan pelaajat-taulun perusteella
-	@AlkaaIsollaKirjaimella
+//	@Size(min = 1, max = 255)  // ei tarvitse, koska arvo valitaan pelaajat-taulun perusteella
+//	@AlkaaIsollaKirjaimella
 	private String pelaaja2;
 	
 	private Date pvm;  //tähän en nyt osaa saman tien tehdä validointia, myöhemmin ehkä! 

@@ -39,11 +39,3 @@ CREATE TABLE ottelut (
 	p2era3 tinyint NOT NULL,
 	voittaja varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE ottelut_pelaajat (
-	id integer NOT NULL auto_increment PRIMARY KEY,
-	pelaaja_id integer NOT NULL,
-  	ottelu_id integer NOT NULL,
-  	FOREIGN KEY (pelaaja_id) REFERENCES pelaajat(id) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  	FOREIGN KEY (ottelu_id) REFERENCES ottelut(id) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;

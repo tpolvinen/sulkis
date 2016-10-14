@@ -77,11 +77,13 @@ public class SecureController {
 		return "secure/lisaaottelu";
 	}
 
-	
-	
 	@RequestMapping(value="/lisaaottelu", method=RequestMethod.POST)
 	public String createOttelu(@ModelAttribute(value="ottelu") @Valid OtteluImpl ottelu, BindingResult result, Model model) {
 		if (result.hasErrors()) {
+			
+			List <Pelaaja> pelaajalista = pDao.haeKaikkiPelaajat();
+			model.addAttribute("pelaajalista", pelaajalista);
+			
 			return "secure/lisaaottelu";
 		} else {
 			oDao.talleta(ottelu);

@@ -77,4 +77,20 @@ public class PelaajatDAO {
 		return pelaajalista;
 	}
 
+	/**
+	 * Poistetaan kaikki pelaajat
+	 */
+	public void poistaKaikkiPelaajat() {
+
+		final String sql2 = "TRUNCATE pelaajat";
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			public PreparedStatement createPreparedStatement(
+					Connection connection) throws SQLException {
+				PreparedStatement ps2 = connection.prepareStatement(sql2);
+				
+				return ps2;
+			}
+		});
+
+	}
 }
