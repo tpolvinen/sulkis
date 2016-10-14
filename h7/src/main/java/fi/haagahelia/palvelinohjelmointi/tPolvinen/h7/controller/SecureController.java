@@ -59,21 +59,41 @@ public class SecureController {
 		List <Ottelu> ottelulista = oDao.haeKaikkiOttelut();
 		model.addAttribute("ottelulista", ottelulista);
 		
-		Ottelu tyhjaottelu = new OtteluImpl();
-		model.addAttribute("tyhjaottelu", tyhjaottelu);
-		
 		return "secure/main";
 	}
 
+	
+	
+	
+	@RequestMapping(value="/lisaaottelu", method=RequestMethod.GET)
+	public String lisaaOttelu(Model model) { //OtteluImpl ottelu, ,  BindingResult result
+		
+		List <Pelaaja> pelaajalista = pDao.haeKaikkiPelaajat();
+		model.addAttribute("pelaajalista", pelaajalista);
+		
+		Ottelu ottelu = new OtteluImpl();
+		model.addAttribute("ottelu", ottelu);
+		
+		return "secure/lisaaottelu";
+	}
 
-//PELAAJAFORMIN TIETOJEN VASTAANOTTO
-	@RequestMapping(value="uusiottelu", method=RequestMethod.POST)
-	public String createOttelu(@ModelAttribute(value="uusiottelu") @Valid OtteluImpl uusiottelu, BindingResult result, Model model) {
+	
+	
+	@RequestMapping(value="/lisaaottelu", method=RequestMethod.POST)
+	public String createOttelu(@ModelAttribute(value="ottelu") @Valid OtteluImpl ottelu, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			return "secure/main";
+			return "secure/lisaaottelu";
 		} else {
-			oDao.talleta(uusiottelu);
-			return "redirect:/secure/main";
+			oDao.talleta(ottelu);
+			
+			List <Pelaaja> pelaajalista = pDao.haeKaikkiPelaajat();
+			model.addAttribute("pelaajalista", pelaajalista);
+			
+			List <Ottelu> ottelulista = oDao.haeKaikkiOttelut();
+			model.addAttribute("ottelulista", ottelulista);
+			
+			return "secure/main";
 		}
 	}
 }
+

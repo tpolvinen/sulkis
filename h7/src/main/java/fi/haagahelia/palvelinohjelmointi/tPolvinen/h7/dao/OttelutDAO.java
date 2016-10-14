@@ -37,7 +37,7 @@ public class OttelutDAO {
 	 * generoima id asetetaan parametrina annettuun olioon.
 	 */
 	public void talleta(Ottelu o) {
-		final String sql = "INSERT INTO ottelut("
+		final String sqlottelut = "INSERT INTO ottelut("
 				+ "pelaaja1, pelaaja2, pvm, "
 				+ "p1era1, p2era1, "
 				+ "p1era2, p2era2, "
@@ -49,7 +49,9 @@ public class OttelutDAO {
 				+ "?,?,"
 				+ "?,?,"
 				+ "?)";
-
+		
+//		INSERT INTO ottelut VALUES (6, 'Eero', 'Tatu', 2016-10-09, 21, 19, 18, 21, 22, 20, 'Eero');UPDATE pelaajat SET voittolkm=voittolkm +1 WHERE nimi='Eero';
+		
 		// anonyymi sisäluokka tarvitsee vakioina välitettävät arvot,
 		// jotta roskien keruu onnistuu tämän metodin suorituksen päättyessä.
 		final String pelaaja1 = o.getPelaaja1();
@@ -61,9 +63,32 @@ public class OttelutDAO {
 		final int p2era2 = o.getP2era2();
 		final int p1era3 = o.getP1era3();
 		final int p2era3 = o.getP2era3();
-		final String voittaja = o.getVoittaja();
 		
-
+		String voitto = null;
+		int p1erav = 0;
+		int p2erav = 0;
+		if (o.getP1era1() > o.getP2era1()) {
+			p1erav++;
+		} else if (o.getP2era1() > o.getP1era1()) {
+			p2erav++;
+		}
+		if (o.getP1era2() > o.getP2era2()) {
+			p1erav++;
+		} else if (o.getP2era2() > o.getP1era2()) {
+			p2erav++;
+		}
+		if (o.getP1era3() > o.getP2era3()) {
+			p1erav++;
+		} else if (o.getP2era3() > o.getP1era3()) {
+			p2erav++;
+		}
+		if (p1erav > p2erav) {
+			voitto = o.getPelaaja1();
+		} else if (p2erav > p1erav) {
+			voitto = o.getPelaaja2();
+		}
+		final String voittaja = voitto;
+		
 		// jdbc pistää generoidun id:n tänne talteen
 		KeyHolder idHolder = new GeneratedKeyHolder();
 
@@ -71,7 +96,7 @@ public class OttelutDAO {
 		// ja KeyHolderilla
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement(sql, new String[] { "id" });
+				PreparedStatement ps = connection.prepareStatement(sqlottelut, new String[] { "id" });
 				ps.setString(1, pelaaja1);
 				ps.setString(2, pelaaja2);
 //				ps.setDate(parameterIndex, x); //tätä ei tarvita, tässä vain muistutuksena
@@ -89,7 +114,17 @@ public class OttelutDAO {
 		// tallennetaan id takaisin beaniin, koska
 		// kutsujalla pitäisi olla viittaus samaiseen olioon
 		o.setId(idHolder.getKey().intValue());
-
+		
+		final String sqlpelaajat = "UPDATE pelaajat SET voittolkm=voittolkm +1 WHERE nimi=?";
+		
+		jdbcTemplate.update(new PreparedStatementCreator() {
+			public PreparedStatement createPreparedStatement(Connection connection2) throws SQLException {
+				PreparedStatement ps2 = connection2.prepareStatement(sqlpelaajat);
+				ps2.setString(1, voittaja);
+				return ps2;
+			}
+		});
+		
 	}
 	
 	/**

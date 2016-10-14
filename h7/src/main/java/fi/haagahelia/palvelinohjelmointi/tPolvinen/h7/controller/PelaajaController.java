@@ -39,22 +39,22 @@ public class PelaajaController {
 		return "voittolista";
 	}
 	
-	//PELAAJAFORMIN TEKEMINEN
-	@RequestMapping(value="uusipelaaja", method=RequestMethod.GET)
-	public String getPelaaja(Model model) { 
-		Pelaaja tyhjapelaaja = new PelaajaImpl();
-		model.addAttribute("pelaaja", tyhjapelaaja);
-		return "secure/pelaaja";
-	}
-			
-	//PELAAJAFORMIN TIETOJEN VASTAANOTTO
-	@RequestMapping(value="uusipelaaja", method=RequestMethod.POST)
-	public String createPelaaja(@ModelAttribute(value="pelaaja") @Valid PelaajaImpl pelaaja, BindingResult result, Model model) {
-		if (result.hasErrors()) {
-			return "secure/pelaaja";
-		} else {
-			pDao.talleta(pelaaja);
-			return "redirect:/pelaajat/lista";
-		}
-	}
+//	//PELAAJAFORMIN TEKEMINEN
+//	@RequestMapping(value="uusipelaaja", method=RequestMethod.GET)
+//	public String getPelaaja(Model model) { 
+//		Pelaaja tyhjapelaaja = new PelaajaImpl();
+//		model.addAttribute("pelaaja", tyhjapelaaja);
+//		return "secure/pelaaja";
+//	}
+//			
+//	//PELAAJAFORMIN TIETOJEN VASTAANOTTO
+//	@RequestMapping(value="uusipelaaja", method=RequestMethod.POST)
+//	public String createPelaaja(@ModelAttribute(value="pelaaja") @Valid PelaajaImpl pelaaja, BindingResult result, Model model) {
+//		if (result.hasErrors()) {
+//			return "secure/pelaaja";
+//		} else {
+//			pDao.talleta(pelaaja);
+//			return "redirect:/pelaajat/lista";
+//		}
+//	}
 }

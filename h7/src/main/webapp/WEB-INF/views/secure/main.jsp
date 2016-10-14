@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page session="false" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
     <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"  %>
     
@@ -81,47 +84,50 @@
 					</tr>
 				</c:forEach>
 		</table>
+		
+		<p><a href="lisaaottelu"><button class="button">Lis‰‰ ottelu</button></a></p>
+	
 	</fieldset>
 	
-	<h1>
-		Luo Ottelu
-	</h1>
-		<fieldset>
-			<form:form modelAttribute="tyhjaottelu" method="post">
+<!-- 	<h1> -->
+<!-- 		Luo Ottelu -->
+<!-- 	</h1> -->
+<!-- 		<fieldset> -->
+<%-- 			<form:form modelAttribute="uusiottelu" method="post"> --%>
 				
-				<p>
-					<form:label	path="pelaaja1">pelaaja1</form:label><br/>
-					<form:input path="pelaaja1" cssErrorClass="VirheellinenKentta"/> <form:errors path="pelaaja1" cssClass="Virheteksti"/>	<br/>	
+<!-- 				<p> -->
+<%-- 					<form:label	path="pelaaja1">pelaaja1</form:label><br/> --%>
+<%-- 					<form:input path="pelaaja1" cssErrorClass="VirheellinenKentta"/> <form:errors path="pelaaja1" cssClass="Virheteksti"/>	<br/>	 --%>
 				
-					<form:label	path="pelaaja2">pelaaja2</form:label><br/>
-					<form:input path="pelaaja2" cssErrorClass="VirheellinenKentta"/> <form:errors path="pelaaja1" cssClass="Virheteksti"/>	<br/>
+<%-- 					<form:label	path="pelaaja2">pelaaja2</form:label><br/> --%>
+<%-- 					<form:input path="pelaaja2" cssErrorClass="VirheellinenKentta"/> <form:errors path="pelaaja1" cssClass="Virheteksti"/>	<br/> --%>
 					
-					<form:label	path="p1era1">p1era1</form:label><br/>
-					<form:input path="p1era1" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era1" cssClass="Virheteksti"/>	<br/>
+<%-- 					<form:label	path="p1era1">p1era1</form:label><br/> --%>
+<%-- 					<form:input path="p1era1" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era1" cssClass="Virheteksti"/>	<br/> --%>
 				
-					<form:label	path="p2era1">p2era1</form:label><br/>
-					<form:input path="p2era1" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era1" cssClass="Virheteksti"/>	<br/>
+<%-- 					<form:label	path="p2era1">p2era1</form:label><br/> --%>
+<%-- 					<form:input path="p2era1" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era1" cssClass="Virheteksti"/>	<br/> --%>
 					
-					<form:label	path="p1era2">p2era3</form:label><br/>
-					<form:input path="p1era2" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era2" cssClass="Virheteksti"/>	<br/>
+<%-- 					<form:label	path="p1era2">p2era3</form:label><br/> --%>
+<%-- 					<form:input path="p1era2" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era2" cssClass="Virheteksti"/>	<br/> --%>
 				
-					<form:label	path="p2era2">p2era2</form:label><br/>
-					<form:input path="p2era2" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era2" cssClass="Virheteksti"/>	<br/>
+<%-- 					<form:label	path="p2era2">p2era2</form:label><br/> --%>
+<%-- 					<form:input path="p2era2" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era2" cssClass="Virheteksti"/>	<br/> --%>
 				
-					<form:label	path="p1era3">p1era3</form:label><br/>
-					<form:input path="p1era3" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era3" cssClass="Virheteksti"/>	<br/>
+<%-- 					<form:label	path="p1era3">p1era3</form:label><br/> --%>
+<%-- 					<form:input path="p1era3" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era3" cssClass="Virheteksti"/>	<br/> --%>
 				
-					<form:label	path="p2era3">p2era3</form:label><br/>
-					<form:input path="p2era3" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era3" cssClass="Virheteksti"/>	<br/>
+<%-- 					<form:label	path="p2era3">p2era3</form:label><br/> --%>
+<%-- 					<form:input path="p2era3" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era3" cssClass="Virheteksti"/>	<br/> --%>
 				
 					
-				</p>
-				<p>	
-					<button type="submit">Lis‰‰</button>
-				</p>
-			</form:form>
+<!-- 				</p> -->
+<!-- 				<p>	 -->
+<!-- 					<button type="submit">Lis‰‰</button> -->
+<!-- 				</p> -->
+<%-- 			</form:form> --%>
 			
-		</fieldset>
+<!-- 		</fieldset> -->
 
 <p><a href="../j_spring_security_logout" > Kirjaudu ulos</a></p>
 
