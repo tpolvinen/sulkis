@@ -22,9 +22,9 @@ import fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.dao.PelaajatDAO;
 @RequestMapping(value="/secure/admin")
 public class AdminController {
 
+	// Ennen käpistelyä oli näin (jos tarvitsee testata):
 //	@RequestMapping(value = "/tools", method = RequestMethod.GET)
 //	public String paasivu(Model model) {
-
 //		return "secure/admin/tools";
 		
 		@Inject

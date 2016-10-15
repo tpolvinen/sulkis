@@ -24,19 +24,18 @@
 	<h3>Sulkiskupin tilanne:</h3><br>
 		<table>
 			<thead>
+			<tr>
+<!-- 			<th>id</th> -->
+			<th>nimi</th>
+			<th>voittolkm</th>
+			</tr>
+			<c:forEach var="data" items="${pelaajalista}">
 				<tr>
-<!-- 					<th>id</th> -->
-					<th>nimi</th>
-					<th>voittolkm</th>
+<%-- 				<td>${data.id}</td> --%>
+				<td>${data.nimi}</td>
+				<td>${data.voittolkm}</td>	
 				</tr>
-				<c:forEach var="data" items="${pelaajalista}">
-					<tr>
-<%-- 						<td>${data.id}</td> --%>
-						<td>${data.nimi}</td>
-						<td>${data.voittolkm}</td>
-				
-					</tr>
-				</c:forEach>
+			</c:forEach>
 		</table>
 	
 	<br>

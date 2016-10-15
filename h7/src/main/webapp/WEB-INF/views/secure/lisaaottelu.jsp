@@ -24,6 +24,10 @@
 <div id="contentbox">
 	<h3>Lisää ottelu:</h3>
 	<form:form modelAttribute="ottelu" method="post">
+	<spring:hasBindErrors name="ottelu">
+		<p class="Virheotsikko">Valitse pelaajat uudestaan ja korjaa pisteet!</p>
+<%-- 	<div class="Virheblokki"><form:errors path="*"/></div> --%>
+	</spring:hasBindErrors>
 	<table>
 		<tr>
 			<td>
@@ -78,44 +82,6 @@
 		
 	
 	</table>
-<%-- 	<form:form modelAttribute="ottelu" method="post"> --%>
-<!-- 		<p> -->
-<%-- 		<form:label	path="pelaaja1">pelaaja1</form:label><br/> --%>
-<!-- 			<select name="pelaaja1"> -->
-<%-- 				<c:forEach var="data" items="${pelaajalista}"> --%>
-<%-- 					<option value=${data.nimi}>${data.nimi}</option> --%>
-<%-- 				</c:forEach> --%>
-<!-- 			</select> -->
-<%-- 		<form:errors path="pelaaja1" cssClass="Virheteksti"/>	<br>	 --%>
-<!-- 		<br>	 -->
-<%-- 		<form:label	path="pelaaja2">pelaaja2</form:label><br/> --%>
-<!-- 			<select name="pelaaja2"> -->
-<%-- 				<c:forEach var="data" items="${pelaajalista}"> --%>
-<%-- 					<option value=${data.nimi}>${data.nimi}</option> --%>
-<%-- 				</c:forEach> --%>
-<!-- 			</select> -->
-<%-- 		<form:errors path="pelaaja2" cssClass="Virheteksti"/>	<br> --%>
-<!-- 		<br><br> -->
-<%-- 		<form:label	path="p1era1">Erä 1 Pelaaja 1</form:label><br/> --%>
-<%-- 		<form:input path="p1era1" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era1" cssClass="Virheteksti"/>	<br/> --%>
-	
-<%-- 		<form:label	path="p2era1">Erä 1 Pelaaja 2</form:label><br/> --%>
-<%-- 		<form:input path="p2era1" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era1" cssClass="Virheteksti"/>	<br/> --%>
-<!-- 		<br> -->
-<%-- 		<form:label	path="p1era2">p2era2</form:label><br/> --%>
-<%-- 		<form:input path="p1era2" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era2" cssClass="Virheteksti"/>	<br/> --%>
-			
-<%-- 		<form:label	path="p2era2">p2era2</form:label><br/> --%>
-<%-- 		<form:input path="p2era2" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era2" cssClass="Virheteksti"/>	<br/> --%>
-<!-- 		<br> -->
-<%-- 		<form:label	path="p1era3">p1era3</form:label><br/> --%>
-<%-- 		<form:input path="p1era3" cssErrorClass="VirheellinenKentta"/> <form:errors path="p1era3" cssClass="Virheteksti"/>	<br/> --%>
-			
-<%-- 		<form:label	path="p2era3">p2era3</form:label><br/> --%>
-<%-- 		<form:input path="p2era3" cssErrorClass="VirheellinenKentta"/> <form:errors path="p2era3" cssClass="Virheteksti"/>	<br/>					 --%>
-<!-- 		</p> -->
-<!-- 		<br> -->
-<!-- 		<p>	 -->
 	<button type="submit">Lisää</button>
 	</p>	
 	</form:form>

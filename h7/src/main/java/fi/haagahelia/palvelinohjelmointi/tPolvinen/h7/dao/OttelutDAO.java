@@ -49,14 +49,12 @@ public class OttelutDAO {
 				+ "?,?,"
 				+ "?,?,"
 				+ "?)";
-		
-//		INSERT INTO ottelut VALUES (6, 'Eero', 'Tatu', 2016-10-09, 21, 19, 18, 21, 22, 20, 'Eero');UPDATE pelaajat SET voittolkm=voittolkm +1 WHERE nimi='Eero';
-		
+				
 		// anonyymi sisäluokka tarvitsee vakioina välitettävät arvot,
 		// jotta roskien keruu onnistuu tämän metodin suorituksen päättyessä.
 		final String pelaaja1 = o.getPelaaja1();
 		final String pelaaja2 = o.getPelaaja2();
-//		final Date pvm = o.getPvm();
+//		final Date pvm = o.getPvm();	//tätä ei tarvita, tässä vain muistutuksena -päivämäärä tulee SQL-serveriltä tallennettaessa tietoa
 		final int p1era1 = o.getP1era1();
 		final int p2era1 = o.getP2era1();
 		final int p1era2 = o.getP1era2();

@@ -42,6 +42,7 @@
 	<p>Nämä painikkeet tekevät kumpikin k.o. taulun TRUNCATE:n, eli tiedot häviävät ja laskurit nollautuvat. KYSELEMÄTTÄ!</p>
 	<br>
 	<div id="contentbox">
+		<h3>Tietojen poisto:</h3>
 		<p><a href="pelaajatpoisto"><button class="button">Pelaajatpoisto</button></a></p>
 		ACHTUNG! Todesgefahr! ACHTUNG!
 		<p><a href="ottelutpoisto"><button class="button">Ottelutpoisto</button></a></p>

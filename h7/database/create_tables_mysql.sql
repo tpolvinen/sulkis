@@ -37,5 +37,5 @@ CREATE TABLE ottelut (
 	p2era2 tinyint NOT NULL,
 	p1era3 tinyint NOT NULL,
 	p2era3 tinyint NOT NULL,
-	voittaja varchar(255) NOT NULL
+	voittaja varchar(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

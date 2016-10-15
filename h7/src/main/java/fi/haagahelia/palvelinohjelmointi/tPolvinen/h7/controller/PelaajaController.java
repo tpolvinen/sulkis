@@ -3,12 +3,12 @@ package fi.haagahelia.palvelinohjelmointi.tPolvinen.h7.controller;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.validation.Valid;
+//import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
+//import org.springframework.validation.BindingResult;
+//import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -38,6 +38,7 @@ public class PelaajaController {
 		model.addAttribute("pelaajalista", pelaajalista);
 		return "voittolista";
 	}
+//	Nämä on hoidettu AdminControllerissa:
 	
 //	//PELAAJAFORMIN TEKEMINEN
 //	@RequestMapping(value="uusipelaaja", method=RequestMethod.GET)
