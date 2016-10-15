@@ -11,28 +11,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Pääsivu</title>
+<title><spring:message code="sulkis.main.jspnimi" /></title>
 <link rel="stylesheet" href="../resources/styles/common.css" type="text/css" />
 <link rel="stylesheet" href="../resources/styles/form.css" type="text/css" />
-<!-- <link rel="stylesheet" type="text/css" -->
-<!-- 	href="../resources/styles/common.css"> -->
 </head>
 <body>
+<div id="langsel">
+	<a href="?lang=en">en</a> | <a href="?lang=fi">fi</a>
+</div>
+
 <img src="../resources/images/hh_logo.jpg" alt="HAAGA-HELIA" />
 
-<h1>Sulkiskuppi</h1>
+<h1><spring:message code="sulkis.main.otsikko" /></h1>
 <h2>H7</h2>
 
 
 	<p>
 	<div id="contentbox">
-		<p><h4>Sulkiskupin tilanne:</h4></p>
+		<p><h4><spring:message code="sulkis.main.tilanne" /></h4></p>
 		<table>
 			<thead>
 				<tr>
 <!-- 					<th>id</th> -->
-					<th>Pelaaja</th>
-					<th>Voitot</th>
+					<th><spring:message code="sulkis.main.pelaajanimi" /></th>
+					<th><spring:message code="sulkis.main.voittolkm" /></th>
 				</tr>
 				<c:forEach var="data" items="${pelaajalista}">
 					<tr>
@@ -47,18 +49,18 @@
 	</div>
 	</p>
 	<div id="contentbox">
-		<p><h4>Otteluiden tiedot:</h4></p>
-		<p><a href="lisaaottelu"><button class="button">Lisää ottelu</button></a></p>
+		<p><h4><spring:message code="sulkis.main.ottelutiedot" /></h4></p>
+		<p><a href="lisaaottelu"><button class="button"><spring:message code="sulkis.main.lisaaottelu" /></button></a></p>
 		
 		<table>
 			<thead>
 				<tr>
-					<th>Nro.</th>
-					<th>Voittaja</th>
-					<th>Päiväys</th>
-					<th>Pelaaja 1</th>
+					<th><spring:message code="sulkis.main.otteluid" /></th>
+					<th><spring:message code="sulkis.main.voittajanimi" /></th>
+					<th><spring:message code="sulkis.main.ottelupvm" /></th>
+					<th><spring:message code="sulkis.main.pelaaja1" /></th>
 					<th></th>
-					<th>Pelaaja 2</th>
+					<th><spring:message code="sulkis.main.pelaaja2" /></th>
 					<th></th>
 					<th align="center">1</th>
 					<th></th>
@@ -98,19 +100,19 @@
 				</c:forEach>
 		</table>
 		
-		<p><a href="lisaaottelu"><button class="button">Lisää ottelu</button></a></p>
+		<p><a href="lisaaottelu"><button class="button"><spring:message code="sulkis.main.lisaaottelu" /></button></a></p>
 	
 	</div>
 	<br>
 	<div id="contentbox">
-		<h4>Sisäänkirjautuneena: <sec:authentication property="principal.username"/></h4>
-		<a href="../j_spring_security_logout"><button class="button">Kirjaudu ulos</button></a>
+		<h4><spring:message code="kirjautuneena" /><sec:authentication property="principal.username"/></h4>
+		<a href="../j_spring_security_logout"><button class="button"><spring:message code="uloskirjaus" /></button></a>
 
 		<sec:authorize access="hasRole('ROLE_ADMIN')">
 			<br><br>
 			<form:form action="admin/tools" method="get">
-				Tästä pääset lisäämään pelaajia ja nollaamaan tietokannan:
-				<p><button type="submit">Admin Tools</button></p>
+				<spring:message code="adminit" />
+				<p><button type="submit"><spring:message code="admintools" /></button></p>
 			</form:form>
 		</sec:authorize>
 </div>

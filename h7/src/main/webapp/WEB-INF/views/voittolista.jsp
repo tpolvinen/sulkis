@@ -9,25 +9,31 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Voittolista</title>
+<title><spring:message code="sulkis.voittolista.jspnimi" /></title>
 <link rel="stylesheet" href="../resources/styles/common.css" type="text/css" />
 <link rel="stylesheet" href="../resources/styles/form.css" type="text/css" />
 </head>
 <body>
 <img src="../resources/images/hh_logo.jpg" alt="HAAGA-HELIA" />
 
-<h1>Sulkiskuppi</h1>
+<div id="langsel">
+	<a href="?lang=en">en</a> | <a href="?lang=fi">fi</a>
+</div>
+	
+<h1><spring:message code="sulkis.voittolista.otsikko" /></h1>
+
 <h2>H7</h2>
 
 
 	<div id="contentbox">
-	<h3>Sulkiskupin tilanne:</h3><br>
+	<h3><spring:message code="sulkis.voittolista.tilanne" /></h3><br>
+	
 		<table>
 			<thead>
 			<tr>
 <!-- 			<th>id</th> -->
-			<th>nimi</th>
-			<th>voittolkm</th>
+			<th><spring:message code="sulkis.voittolista.pelaajanimi" /></th>
+			<th><spring:message code="sulkis.voittolista.voittolkm" /></th>
 			</tr>
 			<c:forEach var="data" items="${pelaajalista}">
 				<tr>
@@ -40,7 +46,7 @@
 	
 	<br>
 	<p>
-	<a href="../loginpage"><button class="button">Kirjaudu!</button></a>
+	<a href="../loginpage"><button class="button"><spring:message code="kirjaudu" /></button></a>
 	</p>
 <!-- 		<p> -->
 <!-- 			<a href="../loginpage">loginpage</a><br/> -->
@@ -50,9 +56,9 @@
 	</div>
 	
 	<br><br><br><br><br><br><br><br>
-	<p>Oppikirjana käytetty:</p>
+	<p><spring:message code="sulkis.voittolista.oppikirjana" /></p>
 	<p><a href="https://www.goodreads.com/book/show/29437996-copying-and-pasting-from-stack-overflow"><img src="../resources/images/copypaste.jpg" alt="COPYPASTE" /></a></p>
-	<p><a href="https://www.goodreads.com/book/show/29437996-copying-and-pasting-from-stack-overflow">Goodreads-linkki</a></p>
+	<p><a href="https://www.goodreads.com/book/show/29437996-copying-and-pasting-from-stack-overflow">Goodreads</a></p>
 	
 
 </body>

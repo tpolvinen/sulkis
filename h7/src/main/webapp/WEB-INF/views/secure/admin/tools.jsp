@@ -11,46 +11,50 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Admin Tools</title>
+<title><spring:message code="sulkis.tools.jspnimi" /></title>
 <link rel="stylesheet" href="../../resources/styles/common.css" type="text/css" />
 <link rel="stylesheet" href="../../resources/styles/form.css" type="text/css" />
 </head>
 <body>
+<div id="langsel">
+	<a href="?lang=en">en</a> | <a href="?lang=fi">fi</a>
+</div>
+
 	<img src="../../resources/images/hh_logo.jpg" alt="HAAGA-HELIA" />
 	
-	<h1>Sulkiskuppi</h1>
+	<h1><spring:message code="sulkis.tools.otsikko" /></h1>
 	<h2>H7</h2>
 	
 	
 	<div id="contentbox">	
-		<h3>Lisää pelaaja:</h3>
+		<h3><spring:message code="sulkis.tools.plisaysotsikko" /></h3>
 		<form:form modelAttribute="uusipelaaja" method="post">
 			<p>
-			<form:label	path="nimi">Nimi</form:label><br/>
+			<form:label	path="nimi"><spring:message code="sulkis.tools.pelaajanimi" /></form:label><br/>
 			<form:input path="nimi" cssErrorClass="VirheellinenKentta"/> <form:errors path="nimi" cssClass="Virheteksti"/>
 			</p>
-			<p><button type="submit">Lisää</button></p>
+			<p><button type="submit"><spring:message code="sulkis.tools.pelaajalisays" /></button></p>
 		</form:form>
 	
 	</div>
 	<br>
 	<div id="contentbox">
-		<p><a href="../main"><button class="button">Takaisin pääsivulle</button></a></p>
+		<p><a href="../main"><button class="button"><spring:message code="sulkis.tools.paluu" /></button></a></p>
 	</div>	
 	<br>
-	<p>Nyt ihan helvetin VAROVASTI!</p>
-	<p>Nämä painikkeet tekevät kumpikin k.o. taulun TRUNCATE:n, eli tiedot häviävät ja laskurit nollautuvat. KYSELEMÄTTÄ!</p>
+	<p><spring:message code="sulkis.tools.varoitus1" /></p>
+	<p><spring:message code="sulkis.tools.varoitus2" /></p>
 	<br>
 	<div id="contentbox">
-		<h3>Tietojen poisto:</h3>
-		<p><a href="pelaajatpoisto"><button class="button">Pelaajatpoisto</button></a></p>
-		ACHTUNG! Todesgefahr! ACHTUNG!
-		<p><a href="ottelutpoisto"><button class="button">Ottelutpoisto</button></a></p>
+		<h3><spring:message code="sulkis.tools.poistootsikko" /></h3>
+		<p><a href="pelaajatpoisto"><button class="button"><spring:message code="sulkis.tools.ppoisto" /></button></a></p>
+		<spring:message code="sulkis.tools.varoitus3" />
+		<p><a href="ottelutpoisto"><button class="button"><spring:message code="sulkis.tools.opoisto" /></button></a></p>
 	</div>
 	<br>
 	<div id="contentbox">
-		<h4>Sisäänkirjautuneena: <sec:authentication property="principal.username"/></h4>
-		<p><a href="../../j_spring_security_logout"><button class="button">Kirjaudu ulos</button></a></p>
+		<h4><spring:message code="kirjautuneena" /><sec:authentication property="principal.username"/></h4>
+		<p><a href="../../j_spring_security_logout"><button class="button"><spring:message code="uloskirjaus" /></button></a></p>
 	</div>
 </body>
 </html>
