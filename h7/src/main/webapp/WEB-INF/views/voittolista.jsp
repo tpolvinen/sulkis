@@ -17,7 +17,7 @@
 <img src="../resources/images/hh_logo.jpg" alt="HAAGA-HELIA" />
 
 <div id="langsel">
-	<a href="?lang=en">en</a> | <a href="?lang=fi">fi</a>
+	<a href="?lang=en">de</a> | <a href="?lang=fi">fi</a>
 </div>
 	
 <h1><spring:message code="sulkis.voittolista.otsikko" /></h1>

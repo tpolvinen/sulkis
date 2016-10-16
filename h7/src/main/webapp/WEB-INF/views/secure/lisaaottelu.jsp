@@ -17,7 +17,7 @@
 </head>
 <body>
 <div id="langsel">
-	<a href="?lang=en">en</a> | <a href="?lang=fi">fi</a>
+	<a href="?lang=en">de</a> | <a href="?lang=fi">fi</a>
 </div>
 
 <img src="../resources/images/hh_logo.jpg" alt="HAAGA-HELIA" />
