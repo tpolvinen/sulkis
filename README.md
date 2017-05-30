@@ -1,7 +1,7 @@
 # sulkis
 ## Badminton Cup Scorekeeping
 
-Spring MVC, I18n, bean validation & Spring Security
+Very basic Spring MVC, I18n, bean validation & Spring Security
 
 As a user one can add matches to cup/tournament (date will be server's current date).
 As an admin one can add players to cup/tournament and empty the database altogether.
